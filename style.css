@@ -31,22 +31,23 @@ img {
     right: 0;
     bottom: 0;
     /* background-color: yellow; */
-    filter: blur(600px);
+    filter: blur(800px);
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
   }
   span{
     display: block;
     text-align: center;
+    margin-top: 5px;
   }
 .form{
     z-index: 999;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 33px;
+    border-radius: 13px;
 }
 .input-container{
     display: flex;
@@ -55,6 +56,9 @@ img {
 }
 input{
     padding: 7px;
+}
+label{
+    margin-bottom: 5px;
 }
 button{
     padding: 7px;
