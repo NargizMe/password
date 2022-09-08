@@ -1,36 +1,43 @@
 let password = document.querySelector('#password');
 let img = document.querySelector('img');
 
-let numValidation = false;
-let letterValidation = false;
-let lengthValidation = false;
 // let characterValidation = false;
-let num = 300;
+let num = 600;
+let numChecked = true;
+let letterChecked = true;
+let lengthChecked = true;
+
+const letter = /[A-Z]/g;
+const numbers = /[0-9]/g;
+const specialCharacter = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
 
 password.addEventListener('keypress', (e) => {
-
-    const letter = /[A-Z]/g;
-    const numbers = /[0-9]/g;
-    const specialCharacter = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     // const specialCharacter = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
     // const specialCharacter = /?=.*[!@#$%^&*]/;
 
-    if(e.key.match(numbers)){
+    if(e.key.match(numbers) && numChecked){
+        numChecked = false;
+        num = num - 200;
         numValidation = true;
-        num = num - 100;
-        img.style.filter = `blur(${num-100}px)`;
+        img.style.filter = `blur(${num}px)`;
+        return;
 
     } 
-    if(e.key.match(letter)){
+    if(e.key.match(letter) && letterChecked){
+        letterChecked = false;
+        num = num - 200;
         letterValidation = true;
-        num = num - 100;
-        img.style.filter = `blur(${num-100}px)`
+        img.style.filter = `blur(${num}px)`
+        return
     } 
     // if(e.key.match(specialCharacter)) characterValidation = true;
-    if(password.value.length >= 8){
+    if(password.value.length >= 8 && lengthChecked){
+        lengthChecked = false;
+        num = num - 200;
         lengthValidation = true;
-        num = num - 100;
-        img.style.filter = `blur(${num-100}px)`
+        img.style.filter = `blur(${num}px)`
+        return
     } 
 
     // console.log(characterValidation);

@@ -31,7 +31,7 @@ img {
     right: 0;
     bottom: 0;
     /* background-color: yellow; */
-    filter: blur(300px);
+    filter: blur(600px);
     z-index: -1;
     width: 100vw;
     height: 100vh;
