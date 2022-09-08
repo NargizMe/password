@@ -5,6 +5,7 @@ let numValidation = false;
 let letterValidation = false;
 let lengthValidation = false;
 // let characterValidation = false;
+let num = 300;
 
 password.addEventListener('keypress', (e) => {
 
@@ -16,17 +17,20 @@ password.addEventListener('keypress', (e) => {
 
     if(e.key.match(numbers)){
         numValidation = true;
-        img.style.filter = "blur(200px)";
+        num = num - 100;
+        img.style.filter = `blur(${num-100}px)`;
 
     } 
     if(e.key.match(letter)){
         letterValidation = true;
-        img.style.filter = "blur(100px)"
+        num = num - 100;
+        img.style.filter = `blur(${num-100}px)`
     } 
     // if(e.key.match(specialCharacter)) characterValidation = true;
     if(password.value.length >= 8){
         lengthValidation = true;
-        img.style.filter = "blur(0px)"
+        num = num - 100;
+        img.style.filter = `blur(${num-100}px)`
     } 
 
     // console.log(characterValidation);
